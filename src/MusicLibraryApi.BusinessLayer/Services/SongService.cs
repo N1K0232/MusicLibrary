@@ -41,7 +41,7 @@ public class SongService : ISongService
         song.RecordLabel = recordLabel;
         return song;
     }
-    public async Task SaveAsync(SaveSongRequest request)
+    public async Task<Song> SaveAsync(SaveSongRequest request)
     {
         var query = dataContext.GetQuery<Entities.Song>(trackingChanges: true);
         var dbSong = request.Id != null ?

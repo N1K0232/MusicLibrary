@@ -7,5 +7,5 @@ public interface ISongService
 {
     Task DeleteAsync(Guid id);
     Task<Song> GetAsync(string title);
-    Task SaveAsync(SaveSongRequest request);
+    Task<Song> SaveAsync(SaveSongRequest request);
 }
