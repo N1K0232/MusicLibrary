@@ -19,8 +19,4 @@
     <ProjectReference Include="..\MusicLibraryApi.BusinessLayer\MusicLibraryApi.BusinessLayer.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Controllers\" />
-  </ItemGroup>
-
 </Project>

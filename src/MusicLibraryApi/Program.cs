@@ -1,5 +1,10 @@
+using FluentValidation.AspNetCore;
 using Hellang.Middleware.ProblemDetails;
 using MicroElements.Swashbuckle.FluentValidation.AspNetCore;
+using MusicLibraryApi.BusinessLayer.MapperProfiles;
+using MusicLibraryApi.BusinessLayer.Services;
+using MusicLibraryApi.BusinessLayer.Validators;
+using MusicLibraryApi.DataAccessLayer;
 using Serilog;
 using System.Text.Json.Serialization;
 using TinyHelpers.Json.Serialization;
@@ -17,12 +22,26 @@ builder.Services.AddControllers()
         options.JsonSerializerOptions.Converters.Add(new UtcDateTimeConverter());
         options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
     });
+
+builder.Services.AddAutoMapper(typeof(SongMapperProfile).Assembly);
+builder.Services.AddFluentValidation(options =>
+{
+    options.RegisterValidatorsFromAssemblyContaining<SaveSongRequestValidator>();
+});
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen()
     .AddFluentValidationRulesToSwagger(options =>
 {
     options.SetNotNullableIfMinLengthGreaterThenZero = true;
 });
+
+string connectionString = builder.Configuration.GetConnectionString("SqlConnection");
+builder.Services.AddSqlServer<DataContext>(connectionString);
+builder.Services.AddScoped<IDataContext>(sp => sp.GetRequiredService<DataContext>());
+
+builder.Services.AddScoped<IRecordLabelService, RecordLabelService>();
+builder.Services.AddScoped<IArtistService, ArtistService>();
+builder.Services.AddScoped<ISongService, SongService>();
 
 var app = builder.Build();
 app.UseHttpsRedirection();
