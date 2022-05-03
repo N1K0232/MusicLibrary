@@ -8,6 +8,6 @@ public class SaveSongRequest : BaseRequestObject
     public Guid IdArtist { get; set; }
     public Guid IdLabel { get; set; }
     public string Title { get; set; }
-    public string ReleaseDate { get; set; }
+    public DateTime ReleaseDate { get; set; }
     public SongType SongType { get; set; }
 }
