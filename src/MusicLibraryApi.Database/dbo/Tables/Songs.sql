@@ -6,7 +6,7 @@
     [ReleaseDate]      DATE             NOT NULL,
     [SongType]         NVARCHAR (10)    NOT NULL,
     [CreatedDate]      DATETIME         NOT NULL,
-    [LastModifiedDate] DATETIME         NOT NULL,
+    [LastModifiedDate] DATETIME         NULL,
     PRIMARY KEY CLUSTERED ([Id] ASC),
     FOREIGN KEY ([IdArtist]) REFERENCES [dbo].[Artists] ([Id]),
     FOREIGN KEY ([IdLabel]) REFERENCES [dbo].[RecordLabels] ([Id])

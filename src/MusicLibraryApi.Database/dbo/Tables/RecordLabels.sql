@@ -5,7 +5,7 @@
     [City]             NVARCHAR (50)    NOT NULL,
     [Country]          NVARCHAR (50)    NOT NULL,
     [CreatedDate]      DATETIME         NOT NULL,
-    [LastModifiedDate] DATETIME         NOT NULL,
+    [LastModifiedDate] DATETIME         NULL,
     PRIMARY KEY CLUSTERED ([Id] ASC)
 );
 
