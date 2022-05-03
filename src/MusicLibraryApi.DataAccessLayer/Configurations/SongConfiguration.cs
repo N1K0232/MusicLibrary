@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore.Metadata.Builders;
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using MusicLibraryApi.DataAccessLayer.Configurations.Common;
 using MusicLibraryApi.DataAccessLayer.Entities;
 
@@ -9,6 +10,8 @@ internal class SongConfiguration : BaseEntityConfiguration<Song>
     public override void Configure(EntityTypeBuilder<Song> builder)
     {
         base.Configure(builder);
+
+        builder.ToTable("Songs");
 
         builder.Property(s => s.Title)
             .HasMaxLength(100)
