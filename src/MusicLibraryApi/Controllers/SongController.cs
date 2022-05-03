@@ -40,7 +40,7 @@ public class SongController : ControllerBase
         return song != null ? Ok(song) : NotFound("no song found");
     }
 
-    [HttpPost("SaveArtist")]
+    [HttpPost("SaveSong")]
     [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(Song))]
     [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(string))]
     public async Task<IActionResult> SaveSong([FromBody] SaveSongRequest request)
