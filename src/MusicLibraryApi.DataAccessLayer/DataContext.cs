@@ -14,10 +14,6 @@ public class DataContext : DbContext, IDataContext
     {
         Set<T>().Remove(entity);
     }
-    public void Delete<T>(IEnumerable<T> entities) where T : BaseEntity
-    {
-        Set<T>().RemoveRange(entities);
-    }
     public ValueTask<T> GetAsync<T>(params object[] keyValues) where T : BaseEntity
     {
         return Set<T>().FindAsync(keyValues);
