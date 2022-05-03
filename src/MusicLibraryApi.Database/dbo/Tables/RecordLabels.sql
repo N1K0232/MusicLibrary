@@ -2,7 +2,9 @@
     [Id]               UNIQUEIDENTIFIER NOT NULL,
     [Name]             NVARCHAR (50)    NOT NULL,
     [FoundationDate]   DATE             NOT NULL,
-    [CreationDate]     DATETIME         NOT NULL,
+    [City]             NVARCHAR (50)    NOT NULL,
+    [Country]          NVARCHAR (50)    NOT NULL,
+    [CreatedDate]      DATETIME         NOT NULL,
     [LastModifiedDate] DATETIME         NOT NULL,
     PRIMARY KEY CLUSTERED ([Id] ASC)
 );

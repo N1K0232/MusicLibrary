@@ -6,7 +6,7 @@
     <Name>MusicLibraryApi.Database</Name>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectVersion>4.1</ProjectVersion>
-    <ProjectGuid>{ef2defdf-2d7c-4394-a31e-028ffd253ffc}</ProjectGuid>
+    <ProjectGuid>{b4115393-71a4-4335-89db-28af2b1ef32f}</ProjectGuid>
     <DSP>Microsoft.Data.Tools.Schema.Sql.Sql130DatabaseSchemaProvider</DSP>
     <OutputType>Database</OutputType>
     <RootPath>
@@ -60,10 +60,12 @@
     <Folder Include="Properties" />
     <Folder Include="dbo\" />
     <Folder Include="dbo\Tables\" />
+    <Folder Include="Security\" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="dbo\Tables\RecordLabels.sql" />
     <Build Include="dbo\Tables\Artists.sql" />
     <Build Include="dbo\Tables\Songs.sql" />
+    <Build Include="Security\BarManager.sql" />
   </ItemGroup>
 </Project>
