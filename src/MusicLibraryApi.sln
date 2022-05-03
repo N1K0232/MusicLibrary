@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.32112.339
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MusicLibraryApi", "MusicLibraryApi\MusicLibraryApi.csproj", "{47010DD7-6900-4DC6-8B24-D6BD442AAFBB}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MusicLibraryApi.BusinessLayer", "MusicLibraryApi.BusinessLayer\MusicLibraryApi.BusinessLayer.csproj", "{79D07615-B9C5-4896-B997-F83F5B2DA5F1}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MusicLibraryApi.DataAccessLayer", "MusicLibraryApi.DataAccessLayer\MusicLibraryApi.DataAccessLayer.csproj", "{394950F4-2869-4AB1-A526-50DC6DCA7A01}"
@@ -13,16 +11,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MusicLibraryApi.Shared", "M
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "MusicLibraryApi.Database", "MusicLibraryApi.Database\MusicLibraryApi.Database.sqlproj", "{EF2DEFDF-2D7C-4394-A31E-028FFD253FFC}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MusicLibraryApi", "MusicLibraryApi\MusicLibraryApi.csproj", "{A522137F-A986-49AC-8EFB-53657B9E85F9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{47010DD7-6900-4DC6-8B24-D6BD442AAFBB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{47010DD7-6900-4DC6-8B24-D6BD442AAFBB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{47010DD7-6900-4DC6-8B24-D6BD442AAFBB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{47010DD7-6900-4DC6-8B24-D6BD442AAFBB}.Release|Any CPU.Build.0 = Release|Any CPU
 		{79D07615-B9C5-4896-B997-F83F5B2DA5F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{79D07615-B9C5-4896-B997-F83F5B2DA5F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{79D07615-B9C5-4896-B997-F83F5B2DA5F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -41,6 +37,10 @@ Global
 		{EF2DEFDF-2D7C-4394-A31E-028FFD253FFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EF2DEFDF-2D7C-4394-A31E-028FFD253FFC}.Release|Any CPU.Build.0 = Release|Any CPU
 		{EF2DEFDF-2D7C-4394-A31E-028FFD253FFC}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{A522137F-A986-49AC-8EFB-53657B9E85F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A522137F-A986-49AC-8EFB-53657B9E85F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A522137F-A986-49AC-8EFB-53657B9E85F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A522137F-A986-49AC-8EFB-53657B9E85F9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
