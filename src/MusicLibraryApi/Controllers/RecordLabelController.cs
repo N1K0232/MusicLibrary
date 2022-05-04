@@ -21,6 +21,11 @@ public class RecordLabelController : ControllerBase
     [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(string))]
     public async Task<IActionResult> DeleteLabel(Guid id)
     {
+        if (id == Guid.Empty)
+        {
+            return BadRequest("not valid label");
+        }
+
         await recordLabelService.DeleteAsync(id);
         return Ok("label successfully deleted");
     }

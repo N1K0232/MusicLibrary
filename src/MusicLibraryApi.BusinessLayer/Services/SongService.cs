@@ -35,10 +35,8 @@ public class SongService : ISongService
             .FirstAsync();
 
         var song = mapper.Map<Song>(dbSong);
-        var artist = await artistService.GetAsync(dbSong.IdArtist);
-        var recordLabel = await recordLabelService.GetAsync(dbSong.IdLabel);
-        song.Artist = artist;
-        song.RecordLabel = recordLabel;
+        song.Artist = await artistService.GetAsync(dbSong.IdArtist);
+        song.RecordLabel = await recordLabelService.GetAsync(dbSong.IdLabel);
         return song;
     }
     public async Task<Song> SaveAsync(SaveSongRequest request)
@@ -58,12 +56,9 @@ public class SongService : ISongService
         }
 
         await dataContext.SaveAsync();
-
         var savedSong = mapper.Map<Song>(dbSong);
-        var artist = await artistService.GetAsync(dbSong.IdArtist);
-        var recordLabel = await recordLabelService.GetAsync(dbSong.IdLabel);
-        savedSong.Artist = artist;
-        savedSong.RecordLabel = recordLabel;
+        savedSong.Artist = await artistService.GetAsync(dbSong.IdArtist);
+        savedSong.RecordLabel = await recordLabelService.GetAsync(dbSong.IdLabel);
         return savedSong;
     }
 }

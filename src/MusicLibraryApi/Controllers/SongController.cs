@@ -21,6 +21,11 @@ public class SongController : ControllerBase
     [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(string))]
     public async Task<IActionResult> DeleteSong(Guid id)
     {
+        if (id == Guid.Empty)
+        {
+            return BadRequest("not valid song");
+        }
+
         await songService.DeleteAsync(id);
         return Ok("song successfully deleted");
     }

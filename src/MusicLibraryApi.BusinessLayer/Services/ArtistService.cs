@@ -30,6 +30,7 @@ public class ArtistService : IArtistService
     {
         var dbArtist = await dataContext.GetAsync<Entities.Artist>(id);
         var artist = mapper.Map<Artist>(dbArtist);
+        artist.RecordLabel = await recordLabelService.GetAsync(dbArtist.IdLabel);
         return artist;
     }
     public async Task<Artist> GetAsync(string artName)
@@ -39,8 +40,7 @@ public class ArtistService : IArtistService
             .FirstAsync();
 
         var artist = mapper.Map<Artist>(dbArtist);
-        var recordLabel = await recordLabelService.GetAsync(dbArtist.IdLabel);
-        artist.RecordLabel = recordLabel;
+        artist.RecordLabel = await recordLabelService.GetAsync(dbArtist.IdLabel);
         return artist;
     }
     public async Task<Artist> SaveAsync(SaveArtistRequest request)
@@ -60,10 +60,8 @@ public class ArtistService : IArtistService
         }
 
         await dataContext.SaveAsync();
-
         var savedArtist = mapper.Map<Artist>(dbArtist);
-        var recordLabel = await recordLabelService.GetAsync(dbArtist.IdLabel);
-        savedArtist.RecordLabel = recordLabel;
+        savedArtist.RecordLabel = await recordLabelService.GetAsync(dbArtist.IdLabel);
         return savedArtist;
     }
 }

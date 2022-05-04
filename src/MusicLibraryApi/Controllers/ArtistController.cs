@@ -21,6 +21,11 @@ public class ArtistController : ControllerBase
     [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(string))]
     public async Task<IActionResult> DeleteArtist(Guid id)
     {
+        if (id == Guid.Empty)
+        {
+            return BadRequest("not valid artist");
+        }
+
         await artistService.DeleteAsync(id);
         return Ok("artist successfully deleted");
     }
