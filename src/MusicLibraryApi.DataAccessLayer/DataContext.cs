@@ -35,9 +35,7 @@ public class DataContext : DbContext, IDataContext
     {
         Set<T>().Add(entity);
     }
-
     public Task SaveAsync() => SaveChangesAsync();
-
     public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
     {
         var entries = ChangeTracker.Entries()
