@@ -56,7 +56,6 @@ public class RecordLabelService : IRecordLabelService
         }
 
         await dataContext.SaveAsync();
-
         var savedRecordLabel = mapper.Map<RecordLabel>(dbLabel);
         return savedRecordLabel;
     }
