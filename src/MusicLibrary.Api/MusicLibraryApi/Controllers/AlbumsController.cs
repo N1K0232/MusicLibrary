@@ -31,7 +31,7 @@ public class AlbumsController : ControllerBase
         return Ok("album sucessfully deleted");
     }
 
-    [HttpGet("GetArtist/{id:guid}")]
+    [HttpGet("GetAlbum/{id:guid}")]
     [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(Artist))]
     [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(string))]
     [ProducesResponseType(StatusCodes.Status404NotFound, Type = typeof(string))]
@@ -46,7 +46,7 @@ public class AlbumsController : ControllerBase
         return album != null ? Ok(album) : NotFound("no album found");
     }
 
-    [HttpGet("GetArtist/{artName}")]
+    [HttpGet("GetAlbum/{name}")]
     [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(Artist))]
     [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(string))]
     [ProducesResponseType(StatusCodes.Status404NotFound, Type = typeof(string))]
