@@ -42,6 +42,7 @@ builder.Services.AddScoped<IDataContext>(sp => sp.GetRequiredService<DataContext
 builder.Services.AddScoped<IRecordLabelService, RecordLabelService>();
 builder.Services.AddScoped<IArtistService, ArtistService>();
 builder.Services.AddScoped<ISongService, SongService>();
+builder.Services.AddScoped<IAlbumService, AlbumService>();
 
 var app = builder.Build();
 app.UseHttpsRedirection();

@@ -8,11 +8,11 @@ namespace MusicLibraryApi.Controllers;
 [ApiController]
 [Route("api/[controller]")]
 [Produces("application/json")]
-public class ArtistController : ControllerBase
+public class ArtistsController : ControllerBase
 {
     private readonly IArtistService artistService;
 
-    public ArtistController(IArtistService artistService)
+    public ArtistsController(IArtistService artistService)
     {
         this.artistService = artistService;
     }
