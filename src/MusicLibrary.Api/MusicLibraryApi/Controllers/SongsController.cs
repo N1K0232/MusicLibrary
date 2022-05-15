@@ -17,7 +17,7 @@ public class SongsController : ControllerBase
         this.songService = songService;
     }
 
-    [HttpDelete("DeleteArtist")]
+    [HttpDelete("DeleteSong")]
     [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(string))]
     public async Task<IActionResult> DeleteSong(Guid id)
     {

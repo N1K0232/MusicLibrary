@@ -19,7 +19,6 @@ public class AlbumsController : ControllerBase
 
     [HttpDelete("DeleteAlbum")]
     [ProducesResponseType(StatusCodes.Status200OK)]
-    [ProducesResponseType(StatusCodes.Status400BadRequest)]
     public async Task<IActionResult> DeleteAlbum(Guid id)
     {
         if (id == Guid.Empty)
