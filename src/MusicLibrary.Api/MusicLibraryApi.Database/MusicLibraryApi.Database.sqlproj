@@ -65,5 +65,6 @@
     <Build Include="dbo\Tables\RecordLabels.sql" />
     <Build Include="dbo\Tables\Artists.sql" />
     <Build Include="dbo\Tables\Songs.sql" />
+    <Build Include="dbo\Tables\Albums.sql" />
   </ItemGroup>
 </Project>
